@@ -1,13 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 import { Briefcase, BarChart3, ShoppingCart } from 'lucide-react';
+import axios from 'axios';
 
 export default function Services() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    website: '',
+    service: '',
+    budget: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('https://tridevi-backend-production.up.railway.app/api/contact', formData);
+      alert('Form submitted successfully!');
+      setFormData({ name: '', email: '', phone: '', website: '', service: '', budget: '', message: '' });
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+    }
+  };
 
   const services = [
     {
@@ -71,18 +97,21 @@ export default function Services() {
         ))}
       </section>
 
-      {/* CTA BUTTON */}
+      {/* Form */}
       <section className="text-center py-10 bg-emerald-50 px-6" data-aos="fade-up">
-        <h2 className="text-2xl font-semibold text-stone-800 mb-2">Want to Work With Us?</h2>
-        <p className="text-gray-600 mb-4 text-sm">
-          Book a free consultation call and let's discuss how we can support your business goals.
-        </p>
-        <Link
-          to="/consultation"
-          className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition"
-        >
-          Book a Free Consultation
-        </Link>
+        <h2 className="text-2xl font-semibold text-stone-800 mb-2">Book a Free Consultation</h2>
+        <form onSubmit={handleSubmit} className="max-w-xl mx-auto grid grid-cols-1 gap-4">
+          <input name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" className="p-3 border rounded" required />
+          <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" className="p-3 border rounded" required type="email" />
+          <input name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" className="p-3 border rounded" />
+          <input name="website" value={formData.website} onChange={handleChange} placeholder="Website (optional)" className="p-3 border rounded" />
+          <input name="service" value={formData.service} onChange={handleChange} placeholder="Interested Service" className="p-3 border rounded" />
+          <input name="budget" value={formData.budget} onChange={handleChange} placeholder="Budget Range" className="p-3 border rounded" />
+          <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Message" rows={4} className="p-3 border rounded"></textarea>
+          <button type="submit" className="bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700">
+            Submit
+          </button>
+        </form>
       </section>
     </div>
   );

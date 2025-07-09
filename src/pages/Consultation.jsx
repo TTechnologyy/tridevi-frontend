@@ -15,7 +15,8 @@ export default function Consultation() {
     agree: false,
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [submittedName, setSubmittedName] = useState('');
+  const [successModal, setSuccessModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -30,8 +31,9 @@ export default function Consultation() {
     e.preventDefault();
     if (!formData.agree) return alert('Please agree to the terms before submitting.');
     try {
-      await axios.post('http://localhost:5050/api/contact', formData);
-      setSubmitted(true);
+      await axios.post('https://tridevi-backend-production.up.railway.app/api/contact', formData);
+      setSubmittedName(formData.name);
+      setSuccessModal(true);
       setFormData({
         name: '',
         email: '',
@@ -51,12 +53,6 @@ export default function Consultation() {
     <div className="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-3xl font-bold text-center mb-2">Real Impact, Real Results</h2>
       <p className="text-center text-gray-700 text-lg mb-6">Partner with us today</p>
-
-      {submitted && (
-        <div className="text-green-600 text-center font-semibold mb-4">
-          Thanks! We will reach out to you shortly.
-        </div>
-      )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -155,6 +151,23 @@ export default function Consultation() {
           Submit
         </button>
       </form>
+
+      {successModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+            <div className="text-green-600 text-lg font-semibold mb-2">✅ Request Received</div>
+            <p className="text-gray-800 mb-4">
+              Thank you <strong>{submittedName}</strong>! We'll contact you shortly.
+            </p>
+            <button
+              onClick={() => setSuccessModal(false)}
+              className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

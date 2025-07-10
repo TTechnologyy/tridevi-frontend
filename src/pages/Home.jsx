@@ -9,8 +9,15 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false, mirror: true });
-  }, []);
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'test_event_click', {
+      event_category: 'debug',
+      event_label: 'Triggered from useEffect',
+    });
+  } else {
+    console.warn('gtag is not defined');
+  }
+}, []);
 
   const handleConsultationClick = () => {
     gtag('event', 'book_consultation_click', {

@@ -1,13 +1,24 @@
+/* global gtag */
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Sparkles } from 'lucide-react';
 
 export default function Home() {
+  const navigate = useNavigate();
+
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false, mirror: true});
+    AOS.init({ duration: 1000, once: false, mirror: true });
   }, []);
+
+  const handleConsultationClick = () => {
+    gtag('event', 'book_consultation_click', {
+      event_category: 'engagement',
+      event_label: 'Home Page CTA',
+    });
+    navigate('/consultation');
+  };
 
   return (
     <div className="bg-white text-gray-800">
@@ -21,14 +32,14 @@ export default function Home() {
         <p className="max-w-2xl text-gray-600 text-lg md:text-xl mb-8 z-10" data-aos="fade-up" data-aos-delay="200">
           At TrideviTech, we turn your ideas into powerful software. Whether it’s SaaS, Marketing, or E-Commerce, we bring clarity, creativity, and execution to every pixel.
         </p>
-        <Link
-          to="/consultation"
+        <button
+          onClick={handleConsultationClick}
           className="px-8 py-3 bg-emerald-600 text-white text-lg rounded-md hover:bg-emerald-700 transition z-10"
           data-aos="fade-up"
           data-aos-delay="400"
         >
           Book Your Free Consultation
-        </Link>
+        </button>
       </section>
 
       {/* Why Us */}

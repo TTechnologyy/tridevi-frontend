@@ -1,13 +1,24 @@
+/* global gtag */
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Briefcase, BarChart3, ShoppingCart } from 'lucide-react';
 
 export default function Services() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const handlePartnerClick = () => {
+    gtag('event', 'partner_with_us_click', {
+      event_category: 'engagement',
+      event_label: 'Services Page CTA',
+    });
+    navigate('/consultation');
+  };
 
   const services = [
     {
@@ -77,12 +88,12 @@ export default function Services() {
         <p className="text-gray-600 mb-4 text-sm">
           Book a free consultation and let's build something great together.
         </p>
-        <Link
-          to="/consultation"
+        <button
+          onClick={handlePartnerClick}
           className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition"
         >
           Partner With Us
-        </Link>
+        </button>
       </section>
     </div>
   );

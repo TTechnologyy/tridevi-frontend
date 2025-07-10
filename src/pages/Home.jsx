@@ -9,21 +9,31 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'test_event_click', {
-      event_category: 'debug',
-      event_label: 'Triggered from useEffect',
-    });
-  } else {
-    console.warn('gtag is not defined');
-  }
-}, []);
+    AOS.init({ duration: 1000, once: false, mirror: true });
 
+    // ✅ Test GA event on page load
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'test_event_click', {
+        event_category: 'debug',
+        event_label: 'Triggered from useEffect',
+      });
+      console.log('✅ test_event_click fired');
+    } else {
+      console.warn('❌ gtag is not defined');
+    }
+  }, []);
+
+  // ✅ Track "Book Your Free Consultation" click
   const handleConsultationClick = () => {
-    gtag('event', 'book_consultation_click', {
-      event_category: 'engagement',
-      event_label: 'Home Page CTA',
-    });
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'book_consultation_click', {
+        event_category: 'engagement',
+        event_label: 'Home Page CTA',
+      });
+      console.log('✅ book_consultation_click fired');
+    } else {
+      console.warn('❌ gtag is not defined');
+    }
     navigate('/consultation');
   };
 

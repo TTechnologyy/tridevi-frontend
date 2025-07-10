@@ -8,16 +8,22 @@ import SaaS from './pages/SaaS';
 import Marketing from './pages/Marketing';
 import Ecommerce from './pages/Ecommerce';
 import Consultation from './pages/Consultation';
-import FAQ from './pages/FAQ'; // ✅ New FAQ Page
+import FAQ from './pages/FAQ';
 import ScrollToTop from './pages/ScrollToTop';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 import { useEffect } from 'react';
+import { initGA, logPageView } from './analytics';
 
 function App() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
+
+    // ✅ Google Analytics Initialization
+    initGA();
+    logPageView();
   }, []);
 
   return (
@@ -54,7 +60,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/consultation" element={<Consultation />} />
-          <Route path="/faq" element={<FAQ />} /> {/* ✅ FAQ route */}
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/sonu" element={<Sonu />} />
           <Route path="/saas" element={<SaaS />} />
           <Route path="/marketing" element={<Marketing />} />

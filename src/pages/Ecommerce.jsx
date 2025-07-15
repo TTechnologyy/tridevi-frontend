@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Fade } from 'react-awesome-reveal';
-import EcommerceImage from '../assets/Ecommerece.avif'; // ✅ local image
+import EcommerceImage from '../assets/Ecommerece.png'; // ✅ local image
 
 function Ecommerce() {
   useEffect(() => {

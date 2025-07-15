@@ -2,21 +2,26 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import { Link } from 'react-router-dom';
 import 'aos/dist/aos.css';
+import heroImage from '../assets/about-hero.jpg';
 
 export default function About() {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false, mirror: true});
+    AOS.init({ duration: 1000, once: false, mirror: true });
   }, []);
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Intro */}
-      <section className="py-16 bg-gradient-to-r from-slate-100 via-emerald-50 to-white">
-        <div className="max-w-4xl mx-auto text-center px-4">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4" data-aos="fade-up">
+      {/* Hero Section with Background Image and Overlay Blur */}
+      <section
+        className="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+        <div className="relative z-10 text-center px-4">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4" data-aos="fade-up">
             About Tridevi Tech
           </h1>
-          <p className="text-gray-600 text-base sm:text-lg" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-lg sm:text-xl max-w-3xl mx-auto text-gray-100" data-aos="fade-up" data-aos-delay="200">
             At Tridevi Tech, we specialize in building robust SaaS platforms, designing revenue-driven digital
             marketing strategies, and managing e-commerce stores that scale. Our team is driven by a passion
             for innovation and impact.
@@ -25,18 +30,18 @@ export default function About() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6">
+      <section className="py-20 bg-gradient-to-br from-white via-emerald-50 to-white bg-[radial-gradient(circle_at_top_left,rgba(110,231,183,0.2),transparent)]">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 px-6">
           <div data-aos="fade-right">
-            <h2 className="text-xl font-semibold text-emerald-700 mb-2">Our Vision</h2>
-            <p className="text-gray-600">
+            <h2 className="text-2xl font-semibold text-emerald-700 mb-3">Our Vision</h2>
+            <p className="text-gray-700 text-base leading-relaxed">
               To empower small and medium-sized businesses around the globe with scalable digital solutions that
               simplify operations and fuel growth.
             </p>
           </div>
           <div data-aos="fade-left">
-            <h2 className="text-xl font-semibold text-emerald-700 mb-2">Our Mission</h2>
-            <p className="text-gray-600">
+            <h2 className="text-2xl font-semibold text-emerald-700 mb-3">Our Mission</h2>
+            <p className="text-gray-700 text-base leading-relaxed">
               To build innovative SaaS tools, deliver ROI-focused digital marketing, and manage modern e-commerce
               platforms that help our clients succeed online.
             </p>

@@ -13,9 +13,9 @@ export default function SaaS() {
       {/* Left Side – Image */}
       <Fade direction="left" triggerOnce>
         <img
-          src="/saas.jpg"
+          src="/saas.jpg" // ✅ directly from public folder
           alt="SaaS Development"
-          className="w-full h-auto rounded-2xl shadow-lg"
+          className="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
         />
       </Fade>
 
@@ -23,7 +23,7 @@ export default function SaaS() {
       <Fade direction="right" triggerOnce>
         <div className="text-gray-800">
           <h2 className="text-4xl font-bold mb-4 text-emerald-600">SaaS Development</h2>
-          <p className="text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed max-w-xl">
             We design scalable SaaS (Software as a Service) products tailored to your market.
             Our services include seamless frontend user experiences, efficient backend systems,
             cloud hosting, user management, and continuous performance tracking to help your product grow.

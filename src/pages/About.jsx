@@ -11,7 +11,7 @@ export default function About() {
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section with Background Image and Overlay Blur */}
+      {/* Hero Section */}
       <section
         className="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
         style={{ backgroundImage: `url(${heroImage})` }}
@@ -55,17 +55,31 @@ export default function About() {
           Meet the Team
         </h2>
 
-        <div className="flex justify-center" data-aos="fade-up" data-aos-delay="200">
+        <div className="flex justify-center gap-16 flex-wrap" data-aos="fade-up" data-aos-delay="200">
+          {/* Sonu Patel */}
           <Link to="/sonu" className="text-center group">
             <img
               src="/team/sonu.jpeg"
               alt="Sonu Patel"
-              className="w-52 h-52 rounded-full object-cover mx-auto shadow-md transition-transform duration-300 group-hover:scale-105"
+              className="w-52 h-52 rounded-full object-cover object-center mx-auto shadow-md transition-transform duration-300 group-hover:scale-105"
             />
             <h3 className="mt-4 text-xl font-bold text-emerald-700 group-hover:underline">
               Sonu Patel
             </h3>
             <p className="text-sm text-gray-600">Founder & CEO</p>
+          </Link>
+
+          {/* Hetasvi Gheewala */}
+          <Link to="/hetasvi" className="text-center group">
+            <img
+              src="/team/Hetasvi_Gheewala.jpeg"
+              alt="Hetasvi Gheewala"
+              className="w-52 h-52 rounded-full object-cover object-center mx-auto shadow-md transition-transform duration-300 group-hover:scale-105"
+            />
+            <h3 className="mt-4 text-xl font-bold text-emerald-700 group-hover:underline">
+              Hetasvi Gheewala
+            </h3>
+            <p className="text-sm text-gray-600">Full Stack Developer</p>
           </Link>
         </div>
       </section>

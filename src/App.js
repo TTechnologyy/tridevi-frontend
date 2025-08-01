@@ -9,6 +9,7 @@ import Marketing from './pages/Marketing';
 import Ecommerce from './pages/Ecommerce';
 import Consultation from './pages/Consultation';
 import FAQ from './pages/FAQ';
+import Hetasvi from './pages/hetasvi';   // ✅ Import your new page
 import ScrollToTop from './pages/ScrollToTop';
 
 import AOS from 'aos';
@@ -32,7 +33,6 @@ function Navbar() {
             className="h-14 w-auto object-contain"
           />
           <span className="text-xl font-bold text-emerald-600 font-pacifico">
-            
           </span>
         </Link>
 
@@ -89,6 +89,7 @@ function App() {
           <Route path="/saas" element={<SaaS />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/ecommerce" element={<Ecommerce />} />
+          <Route path="/hetasvi" element={<Hetasvi />} />   {/* ✅ Added Route */}
         </Routes>
       </main>
 

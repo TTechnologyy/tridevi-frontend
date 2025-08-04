@@ -13,7 +13,7 @@ export default function Services() {
   }, []);
 
   const handlePartnerClick = () => {
-    gtag('event', 'partner_with_us_click', {
+    gtag('event', 'Let’s Talk About Your Project_click', {
       event_category: 'engagement',
       event_label: 'Services Page CTA',
     });
@@ -92,7 +92,7 @@ export default function Services() {
           onClick={handlePartnerClick}
           className="inline-block px-6 py-3 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition"
         >
-          Partner With Us
+          Let’s Talk About Your Project
         </button>
       </section>
     </div>

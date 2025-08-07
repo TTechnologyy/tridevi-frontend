@@ -43,19 +43,19 @@ export default function Home() {
   const services = [
     {
       title: 'SaaS Development',
-      description: 'We design scalable, user-friendly software platforms tailored to your business needs.',
+      description: 'Custom software that evolves with your business. Scalable. Intuitive. Secure.',
       image: saasImg,
       link: '/saas'
     },
     {
       title: 'Digital Marketing',
-      description: 'From SEO to paid ads, we craft strategies that drive real conversions.',
+      description: 'Grow your brand with SEO, paid ads, and compelling content strategies that convert.',
       image: marketingImg,
       link: '/marketing'
     },
     {
-      title: 'E-Commerce Management',
-      description: 'Empowering businesses with listings, payments, and streamlined workflows.',
+      title: 'E-Commerce Solutions',
+      description: 'Streamline your online store with optimized product listings, payment systems, and automation.',
       image: ecommerceImg,
       link: '/ecommerce'
     },
@@ -78,10 +78,10 @@ export default function Home() {
         <div className="relative z-10">
           <Sparkles className="text-emerald-400 w-12 h-12 mb-4 animate-bounce mx-auto" data-aos="fade-down" />
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight" data-aos="fade-up">
-            We Build Digital Brilliance for Ambitious Brands
+            Crafting Digital Products That Elevate Brands
           </h1>
           <p className="max-w-2xl text-gray-200 text-lg md:text-xl mb-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
-            At TrideviTech, we turn your ideas into powerful software. Whether it’s SaaS, Marketing, or E-Commerce, we bring clarity, creativity, and execution to every pixel.
+            From SaaS platforms to full-scale marketing and online stores, TrideviTech helps you build, launch, and grow with confidence.
           </p>
           <button
             onClick={handleConsultationClick}
@@ -96,19 +96,19 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <section className="px-6 py-20 max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12 text-stone-800" data-aos="fade-up">Why Choose TrideviTech?</h2>
+        <h2 className="text-4xl font-bold mb-12 text-stone-800" data-aos="fade-up">Why Work With Us?</h2>
         <div className="grid md:grid-cols-3 gap-10 text-left">
           <div data-aos="fade-up" data-aos-delay="100">
-            <h3 className="text-xl font-semibold mb-2 text-emerald-700">Tailored Solutions</h3>
-            <p className="text-gray-600">We don’t do templates. Every solution is built from scratch to meet your unique goals.</p>
+            <h3 className="text-xl font-semibold mb-2 text-emerald-700">Tailored, Not Templated</h3>
+            <p className="text-gray-600">We dive deep into your goals and craft unique, purpose-driven solutions. No one-size-fits-all.</p>
           </div>
           <div data-aos="fade-up" data-aos-delay="200">
-            <h3 className="text-xl font-semibold mb-2 text-emerald-700">Modern, Scalable Tech</h3>
-            <p className="text-gray-600">From sleek frontends to powerful backends, we use the latest tech to future-proof your product.</p>
+            <h3 className="text-xl font-semibold mb-2 text-emerald-700">Future-Ready Technology</h3>
+            <p className="text-gray-600">Our stack is built for growth—responsive UIs, fast APIs, and cloud-based architecture.</p>
           </div>
           <div data-aos="fade-up" data-aos-delay="300">
-            <h3 className="text-xl font-semibold mb-2 text-emerald-700">Reliable & Fast Communication</h3>
-            <p className="text-gray-600">We act like an extension of your team—you’re never left guessing.</p>
+            <h3 className="text-xl font-semibold mb-2 text-emerald-700">Clear Communication</h3>
+            <p className="text-gray-600">We collaborate closely and keep you in the loop—from kickoff to deployment and beyond.</p>
           </div>
         </div>
       </section>
@@ -116,10 +116,10 @@ export default function Home() {
       {/* Core Services Grid */}
       <section className="bg-emerald-50 py-20 px-4 text-center">
         <h2 className="text-4xl font-bold text-stone-800 mb-6" data-aos="fade-up">
-          Our Core Services
+          What We Do
         </h2>
         <p className="max-w-2xl mx-auto text-gray-600 text-base md:text-lg mb-10" data-aos="fade-up" data-aos-delay="200">
-          Explore what we offer across SaaS Development, Digital Marketing, and E-Commerce Automation.
+          We help you launch, grow, and automate your digital presence with services built around your vision.
         </p>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, idx) => (

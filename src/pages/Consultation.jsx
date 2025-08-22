@@ -11,7 +11,6 @@ export default function Consultation() {
     website: '',
     service: '',
     budget: '',
-    customBudget: '',
     message: '',
     agree: false,
   });
@@ -47,7 +46,6 @@ export default function Consultation() {
         website: '',
         service: '',
         budget: '',
-        customBudget: '',
         message: '',
         agree: false,
       });
@@ -61,7 +59,7 @@ export default function Consultation() {
     <div className="min-h-screen bg-gradient-to-tr from-white via-emerald-50 to-white flex items-center justify-center px-4 py-16">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 bg-white rounded-2xl shadow-xl p-8 md:p-12">
 
-        {/* LEFT: Branding / Trust */}
+        {/* LEFT: Branding */}
         <div className="flex flex-col justify-center text-center md:text-left">
           <h2 className="text-4xl font-bold text-emerald-700 mb-4">Start Something Powerful</h2>
           <p className="text-gray-700 text-lg mb-6">
@@ -102,27 +100,15 @@ export default function Consultation() {
                 <option value="Digital Marketing">Digital Marketing</option>
                 <option value="E-Commerce Solutions">E-Commerce Solutions</option>
               </select>
-              <div className="w-full">
-                <select name="budget" className="w-full px-4 py-2 border rounded mb-2" value={formData.budget} onChange={handleChange} required>
-                  <option value="">Select Budget*</option>
-                  <option value="<$1k">Less than $1,000</option>
-                  <option value="$1k-$5k">$1,000 - $5,000</option>
-                  <option value=">$5k">More than $5,000</option>
-                  <option value="custom">Other (Specify Below)</option>
-                </select>
-                {formData.budget === 'custom' && (
-                  <input
-                    name="customBudget"
-                    placeholder="Enter your specific budget"
-                    className="w-full px-4 py-2 border rounded"
-                    value={formData.customBudget}
-                    onChange={handleChange}
-                  />
-                )}
-              </div>
+              <select name="budget" className="w-full px-4 py-2 border rounded" value={formData.budget} onChange={handleChange} required>
+                <option value="">Select Budget*</option>
+                <option value="<$1k">Less than $1,000</option>
+                <option value="$1k-$5k">$1,000 - $5,000</option>
+                <option value=">$5k">More than $5,000</option>
+              </select>
             </div>
 
-            <textarea name="message" rows="4" placeholder="Message" className="w-full px-4 py-2 border rounded" value={formData.message} onChange={handleChange} />
+            <textarea name="message" rows="4" placeholder="Message*" className="w-full px-4 py-2 border rounded" value={formData.message} onChange={handleChange} required />
 
             <label className="flex items-center text-sm">
               <input type="checkbox" name="agree" checked={formData.agree} onChange={handleChange} className="mr-2" required />
@@ -134,7 +120,6 @@ export default function Consultation() {
             </button>
           </form>
         </div>
-
       </div>
 
       {/* ✅ Modal */}

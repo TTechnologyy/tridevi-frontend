@@ -34,7 +34,7 @@ export default function SaaS() {
         {/* Left Side – Image */}
         <Fade direction="left" triggerOnce>
           <img
-            src="SaaS.jpg"
+            src="/saas.jpg"
             alt="SaaS"
             className="w-full h-auto rounded-3xl shadow-xl hover:scale-105 transition-transform duration-300"
           />
@@ -67,7 +67,6 @@ export default function SaaS() {
               ))}
             </div>
 
-            
           </div>
         </Fade>
       </div>

@@ -4,12 +4,13 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Sonu from './pages/Sonu';
+import Hetasvi from './pages/hetasvi';
+import Viren from './pages/Viren';          // ✅ Added Viren import
 import SaaS from './pages/SaaS';
 import Marketing from './pages/Marketing';
 import Ecommerce from './pages/Ecommerce';
 import Consultation from './pages/Consultation';
 import FAQ from './pages/FAQ';
-import Hetasvi from './pages/hetasvi';   // ✅ Import your new page
 import ScrollToTop from './pages/ScrollToTop';
 
 import AOS from 'aos';
@@ -29,11 +30,9 @@ function Navbar() {
           <img
             src="/logo-transparent-png.png"
             alt="TrideviTech Logo"
-            role="img"
             className="h-14 w-auto object-contain"
           />
-          <span className="text-xl font-bold text-emerald-600 font-pacifico">
-          </span>
+          <span className="text-xl font-bold text-emerald-600 font-pacifico"></span>
         </Link>
 
         <div className="hidden md:flex gap-6 font-medium text-base">
@@ -79,17 +78,23 @@ function App() {
 
       <main className="min-h-screen bg-white text-gray-800">
         <Routes>
+          {/* Main Pages */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/consultation" element={<Consultation />} />
           <Route path="/faq" element={<FAQ />} />
+
+          {/* Team Pages */}
           <Route path="/sonu" element={<Sonu />} />
+          <Route path="/hetasvi" element={<Hetasvi />} />
+          <Route path="/viren" element={<Viren />} />  {/* ✅ Added Viren route */}
+
+          {/* Services Sub-Pages */}
           <Route path="/saas" element={<SaaS />} />
           <Route path="/marketing" element={<Marketing />} />
           <Route path="/ecommerce" element={<Ecommerce />} />
-          <Route path="/hetasvi" element={<Hetasvi />} />   {/* ✅ Added Route */}
         </Routes>
       </main>
 

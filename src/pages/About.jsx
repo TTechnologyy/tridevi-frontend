@@ -81,6 +81,19 @@ export default function About() {
             </h3>
             <p className="text-sm text-gray-600">Full Stack Developer</p>
           </Link>
+
+          {/* Viren Soni */}
+          <Link to="/viren" className="text-center group">
+  <img
+    src="/team/viren.jpg"
+    alt="Viren Soni"
+    className="w-52 h-52 rounded-full object-cover object-center mx-auto shadow-md transition-transform duration-300 group-hover:scale-105"
+  />
+  <h3 className="mt-4 text-xl font-bold text-emerald-700 group-hover:underline">
+    Viren Soni
+  </h3>
+  <p className="text-sm text-gray-600">Software & Automation Engineer</p>
+</Link>
         </div>
       </section>
     </div>

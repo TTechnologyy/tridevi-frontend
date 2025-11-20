@@ -22,7 +22,7 @@ export default function Sonu() {
         {/* Profile Image */}
         <img
           data-aos="fade-up"
-          src="/team/sonu.jpeg"
+          src="/team/spate2.jpeg"
           alt="Sonu Patel"
           className="w-72 h-auto rounded-xl shadow-md object-cover transition-transform duration-500 hover:scale-105"
         />

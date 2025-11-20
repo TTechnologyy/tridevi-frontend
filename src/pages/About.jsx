@@ -59,7 +59,7 @@ export default function About() {
           {/* Sonu Patel */}
           <Link to="/sonu" className="text-center group">
             <img
-              src="/team/sonu.jpeg"
+              src="/team/spate.jpeg"
               alt="Sonu Patel"
               className="w-52 h-52 rounded-full object-cover object-center mx-auto shadow-md transition-transform duration-300 group-hover:scale-105"
             />
